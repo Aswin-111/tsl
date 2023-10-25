@@ -142,9 +142,11 @@ router.post('/countries', async (req, res) => {
     }
 });
 router.get('/countrieslist', async (req, res) => {
+
     try {
-        const countries = await Country.findAll();
-        res.json(countries);
+        // const countries = await Country.findAll();
+        // res.json(countries);
+        res.json(require('../countries'))
     } catch (error) {
         console.error(error);
         res.status(500).send({ message: "An error occurred while fetching countries" });
